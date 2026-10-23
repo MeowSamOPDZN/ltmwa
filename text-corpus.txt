@@ -1,0 +1,629 @@
+# greetings-english.txt
+Hello.
+Hi there.
+Good morning.
+Good afternoon.
+Good evening.
+Good night.
+How are you?
+I am fine, thank you.
+What is your name?
+My name is Sam.
+Where are you from?
+I am from India.
+Nice to meet you.
+See you later.
+Take care.
+Welcome to my website.
+Thank you very much.
+You are welcome.
+Please help me.
+Excuse me.
+I am sorry.
+No problem.
+Congratulations.
+Good luck.
+Happy birthday.
+How was your day?
+My day was good.
+What are you doing?
+I am learning English.
+I am building a website.
+I like coding.
+This is my project.
+
+# grammar-english.txt
+I am a student.
+You are my friend.
+He is a teacher.
+She is a doctor.
+It is a book.
+We are happy.
+They are playing.
+The cat is small.
+The dogs are big.
+I have a pen.
+She has a bag.
+They have two cars.
+This is an apple.
+This is a table.
+The sun is hot.
+I go to school every day.
+She goes to school every day.
+They play in the evening.
+He plays football on Sunday.
+I am reading a book now.
+She is cooking food now.
+They are watching a movie now.
+I read a book yesterday.
+She cooked food yesterday.
+They watched a movie yesterday.
+I will read a book tomorrow.
+She will cook food tomorrow.
+They will watch a movie tomorrow.
+If it rains, we will stay home.
+Because it was hot, we drank water.
+The book is on the table.
+The cat is under the chair.
+The school is near my home.
+My home is in the city.
+I wake up at six in the morning.
+I sleep at ten in the night.
+
+# conversation-english.txt
+Q: What is your name?
+A: My name is Sam.
+Q: How old are you?
+A: I am thirteen years old.
+Q: Where do you live?
+A: I live in India.
+Q: What do you like?
+A: I like coding and making websites.
+Q: What is your favourite colour?
+A: My favourite colour is blue.
+Q: Can you help me?
+A: Yes, of course I can help you.
+Q: How do I learn English?
+A: Read a little every day, speak daily, and learn new words.
+Q: How do I learn coding?
+A: Start with small programs, practise daily, and build projects.
+Q: What time is it?
+A: It is four o clock.
+Q: How much does this cost?
+A: This costs one hundred rupees.
+Q: Where is the station?
+A: The station is near the market.
+Q: Do you speak Hindi?
+A: Yes, I speak Hindi and English.
+
+# numbers-english.txt
+One, two, three, four, five.
+Six, seven, eight, nine, ten.
+Eleven, twelve, thirteen, fourteen, fifteen.
+Sixteen, seventeen, eighteen, nineteen, twenty.
+Thirty, forty, fifty, sixty, seventy.
+Eighty, ninety, one hundred, one thousand.
+Monday, Tuesday, Wednesday, Thursday, Friday.
+Saturday and Sunday are the weekend.
+January, February, March, April, May, June.
+July, August, September, October, November, December.
+Today is Friday.
+Tomorrow will be Saturday.
+Yesterday was Thursday.
+My birthday is on thirteenth February.
+In the morning I wake up early.
+In the afternoon I study.
+In the evening I play.
+At night I sleep.
+
+# greetings-hindi.txt
+नमस्ते।
+आप कैसे हैं?
+मैं ठीक हूँ, धन्यवाद।
+आपका नाम क्या है?
+मेरा नाम सैम है।
+आप कहाँ से हैं?
+मैं भारत से हूँ।
+आपसे मिलकर खुशी हुई।
+फिर मिलेंगे।
+अपना ध्यान रखना।
+मेरी वेबसाइट में आपका स्वागत है।
+बहुत बहुत धन्यवाद।
+आपका स्वागत है।
+कृपया मेरी मदद कीजिए।
+माफ़ कीजिए।
+कोई बात नहीं।
+बधाई हो।
+शुभकामनाएँ।
+जन्मदिन मुबारक हो।
+सुप्रभात।
+शुभ दोपहर।
+शुभ संध्या।
+शुभ रात्रि।
+आज आपका दिन कैसा था?
+मेरा दिन अच्छा था।
+आप क्या कर रहे हैं?
+मैं हिंदी सीख रहा हूँ।
+मुझे कोडिंग पसंद है।
+यह मेरा प्रोजेक्ट है।
+
+# grammar-hindi.txt
+मैं एक छात्र हूँ।
+तुम मेरे दोस्त हो।
+वह एक शिक्षक है।
+वह एक डॉक्टर है।
+यह एक किताब है।
+हम खुश हैं।
+वे खेल रहे हैं।
+बिल्ली छोटी है।
+कुत्ते बड़े हैं।
+मेरे पास एक कलम है।
+उसके पास एक बैग है।
+उनके पास दो कारें हैं।
+यह एक सेब है।
+सूरज गर्म है।
+मैं हर दिन स्कूल जाता हूँ।
+वह हर दिन स्कूल जाती है।
+वे शाम को खेलते हैं।
+मैं अभी किताब पढ़ रहा हूँ।
+वह अभी खाना बना रही है।
+वे अभी फिल्म देख रहे हैं।
+मैंने कल किताब पढ़ी थी।
+उसने कल खाना बनाया था।
+मैं कल किताब पढ़ूँगा।
+वह कल खाना बनाएगी।
+अगर बारिश होगी, तो हम घर पर रहेंगे।
+किताब मेज़ पर है।
+बिल्ली कुर्सी के नीचे है।
+स्कूल मेरे घर के पास है।
+मैं सुबह छह बजे उठता हूँ।
+मैं रात को दस बजे सोता हूँ।
+
+# conversation-hindi.txt
+प्रश्न: आपका नाम क्या है?
+उत्तर: मेरा नाम सैम है।
+प्रश्न: आपकी उम्र कितनी है?
+उत्तर: मैं तेरह साल का हूँ।
+प्रश्न: आप कहाँ रहते हैं?
+उत्तर: मैं भारत में रहता हूँ।
+प्रश्न: आपको क्या पसंद है?
+उत्तर: मुझे कोडिंग और वेबसाइट बनाना पसंद है।
+प्रश्न: आपका पसंदीदा रंग कौन सा है?
+उत्तर: मेरा पसंदीदा रंग नीला है।
+प्रश्न: क्या आप मेरी मदद कर सकते हैं?
+उत्तर: हाँ, बिल्कुल मैं आपकी मदद कर सकता हूँ।
+प्रश्न: मैं हिंदी कैसे सीखूँ?
+उत्तर: हर दिन थोड़ा पढ़िए, रोज़ बोलिए, और नए शब्द सीखिए।
+प्रश्न: मैं कोडिंग कैसे सीखूँ?
+उत्तर: छोटे प्रोग्राम से शुरू कीजिए, रोज़ अभ्यास कीजिए, और प्रोजेक्ट बनाइए।
+प्रश्न: कितने बजे हैं?
+उत्तर: चार बजे हैं।
+प्रश्न: इसकी कीमत कितनी है?
+उत्तर: इसकी कीमत एक सौ रुपये है।
+प्रश्न: स्टेशन कहाँ है?
+उत्तर: स्टेशन बाज़ार के पास है।
+प्रश्न: क्या आप अंग्रेज़ी बोलते हैं?
+उत्तर: हाँ, मैं हिंदी और अंग्रेज़ी बोलता हूँ।
+
+# numbers-hindi.txt
+एक, दो, तीन, चार, पाँच।
+छह, सात, आठ, नौ, दस।
+ग्यारह, बारह, तेरह, चौदह, पंद्रह।
+सोलह, सत्रह, अठारह, उन्नीस, बीस।
+तीस, चालीस, पचास, साठ, सत्तर।
+अस्सी, नब्बे, एक सौ, एक हज़ार।
+सोमवार, मंगलवार, बुधवार, गुरुवार, शुक्रवार।
+शनिवार और रविवार को सप्ताहांत होता है।
+जनवरी, फ़रवरी, मार्च, अप्रैल, मई, जून।
+जुलाई, अगस्त, सितंबर, अक्टूबर, नवंबर, दिसंबर।
+आज शुक्रवार है।
+कल शनिवार होगा।
+कल गुरुवार था।
+मेरा जन्मदिन तेरह फ़रवरी को है।
+सुबह मैं जल्दी उठता हूँ।
+दोपहर में मैं पढ़ाई करता हूँ।
+शाम को मैं खेलता हूँ।
+रात को मैं सोता हूँ।
+
+# hinglish.txt
+Namaste, aap kaise ho?
+Main theek hoon, dhanyavaad.
+Tumhara naam kya hai?
+Mera naam Sam hai.
+Tum kahan se ho?
+Main India se hoon.
+Aapse milkar khushi hui.
+Phir milenge.
+Meri website mein aapka swagat hai.
+Bahut bahut dhanyavaad.
+Koi baat nahi.
+Janamdin mubarak ho.
+Shubh prabhat.
+Aaj tumhara din kaisa tha?
+Mera din achha tha.
+Tum kya kar rahe ho?
+Main Hindi seekh raha hoon.
+Mujhe coding pasand hai.
+Yeh mera project hai.
+Ek, do, teen, chaar, paanch.
+Chhah, saat, aath, nau, das.
+Aaj shukravaar hai.
+Kal shanivaar hoga.
+Mera janamdin terah February ko hai.
+
+# phrases-english-hindi.txt
+English: Hello. Hindi: नमस्ते।
+English: Thank you. Hindi: धन्यवाद।
+English: Good morning. Hindi: सुप्रभात।
+English: Good night. Hindi: शुभ रात्रि।
+English: How are you? Hindi: आप कैसे हैं?
+English: My name is Sam. Hindi: मेरा नाम सैम है।
+English: I am from India. Hindi: मैं भारत से हूँ।
+English: Please help me. Hindi: कृपया मेरी मदद कीजिए।
+English: See you later. Hindi: फिर मिलेंगे।
+English: I like coding. Hindi: मुझे कोडिंग पसंद है।
+English: This is my project. Hindi: यह मेरा प्रोजेक्ट है।
+English: Happy birthday. Hindi: जन्मदिन मुबारक हो।
+English: Where are you from? Hindi: आप कहाँ से हैं?
+English: Nice to meet you. Hindi: आपसे मिलकर खुशी हुई।
+English: You are welcome. Hindi: आपका स्वागत है।
+English: No problem. Hindi: कोई बात नहीं।
+English: Excuse me. Hindi: माफ़ कीजिए।
+English: I am sorry. Hindi: मुझे माफ़ कीजिए।
+English: Good luck. Hindi: शुभकामनाएँ।
+English: Take care. Hindi: अपना ध्यान रखना।
+
+
+# animals-english.txt
+The cat is sleeping on the mat.
+The cat drinks milk in the morning.
+The dog runs in the garden every day.
+The dog is loyal and friendly.
+The bird sings in the tree.
+The bird flies high in the sky.
+The fish swims in the clear water.
+The cow eats green grass in the field.
+The horse runs fast across the ground.
+The elephant is the biggest land animal.
+The lion is called the king of the jungle.
+The monkey jumps from tree to tree.
+The rabbit eats carrots in the garden.
+The duck swims in the small pond.
+The hen lays eggs in the morning.
+My cat likes to play with a ball.
+The small puppy follows me everywhere.
+Birds build nests in the spring.
+The tiger hunts in the dark forest.
+The bear sleeps through the cold winter.
+
+# school-english.txt
+I go to school in the morning.
+My school is near my home.
+The teacher writes on the blackboard.
+We learn English and maths at school.
+My friend sits next to me in class.
+The school bell rings at nine.
+We play football during the lunch break.
+The library has many good books.
+I read a new story every week.
+Our teacher tells us interesting stories.
+We do our homework in the evening.
+The classroom is clean and bright.
+Students raise their hands to answer.
+I carry my books in a blue bag.
+We sing the morning prayer together.
+Science class is my favourite class.
+We draw pictures in the art class.
+The exam starts next Monday.
+Hard work brings good marks.
+Reading every day makes learning easy.
+
+# nature-english.txt
+The sun rises in the east.
+The sun sets in the west.
+The rain falls from dark clouds.
+Rain makes the fields green again.
+The river flows to the sea.
+The mountains are tall and quiet.
+Snow covers the mountain tops in winter.
+The wind moves the tall trees.
+Flowers bloom in the spring season.
+The garden is full of red roses.
+Bees collect honey from the flowers.
+The moon shines brightly at night.
+Stars twinkle in the clear night sky.
+The sea waves touch the sandy shore.
+Green trees give us clean air.
+We should plant more trees every year.
+The forest is home to many animals.
+A rainbow appears after the rain.
+The morning air feels fresh and cool.
+Nature gives us food water and shelter.
+
+# family-english.txt
+My family lives in a small house.
+My mother cooks tasty food for us.
+My father goes to work in the morning.
+My sister helps me with my homework.
+My brother plays cricket with his friends.
+We eat dinner together every night.
+My grandmother tells old stories.
+My grandfather reads the newspaper daily.
+We visit our village in the holidays.
+Family members help each other always.
+We celebrate festivals together at home.
+My mother teaches me good manners.
+My father bought me a new bicycle.
+We watch a movie together on Sunday.
+Love and care make a family strong.
+My little brother loves chocolate cake.
+We take a family photo every year.
+Grandparents are the roots of the family.
+We respect our elders at home.
+Home is where the family lives together.
+
+# food-english.txt
+I eat bread and butter for breakfast.
+Rice and dal is my lunch today.
+Fresh fruits keep us healthy.
+My mother makes hot soup in winter.
+We drink milk every morning.
+Vegetables are good for our health.
+The mango is the king of fruits.
+Apples are red and sweet.
+I like spicy food very much.
+We eat with our family at the table.
+Too much sugar is bad for teeth.
+Water is important for our body.
+The baker makes fresh bread daily.
+Street food smells very tasty.
+We share our tiffin with friends.
+Cooking at home is safe and healthy.
+The sweet shop sells many jalebis.
+Tea is served hot in a cup.
+Breakfast is the first meal of the day.
+We should wash fruits before eating.
+
+# travel-english.txt
+We travelled to the city by train.
+The train arrived at the station on time.
+I saw green fields from the window.
+My uncle lives in a big city.
+We visited the zoo during our trip.
+The bus stopped near the market.
+Travelling teaches us many new things.
+We carried food and water on the journey.
+The road goes through small villages.
+I took many photos during the trip.
+The aeroplane flies above the clouds.
+Ships sail across the wide sea.
+We booked a room in a small hotel.
+The guide showed us the old fort.
+Our journey was long but happy.
+We returned home in the evening.
+Maps help travellers find the way.
+The station was crowded in the morning.
+I want to visit the mountains one day.
+Every journey gives us new memories.
+
+# weather-english.txt
+Today the weather is sunny and warm.
+Dark clouds covered the sky in the evening.
+Heavy rain fell all night yesterday.
+The wind is blowing very fast today.
+Winter mornings are cold and foggy.
+Summer days are long and hot.
+We wear woollen clothes in winter.
+Children play outside in pleasant weather.
+The storm broke many tree branches.
+After the rain the air became cool.
+Fog made the road hard to see.
+We carry umbrellas in the rainy season.
+Spring brings mild and pleasant days.
+The weather report comes on television.
+Farmers wait for rain for their crops.
+Snowfall makes the town look white.
+A cool breeze came from the sea.
+The sky cleared after the short rain.
+Hot winds blow in the month of May.
+Good weather makes everyone feel cheerful.
+
+# sports-english.txt
+Cricket is very popular in India.
+We play football in the school ground.
+Running every morning keeps us fit.
+My friend is good at badminton.
+The team practised hard for the match.
+India won the match by ten runs.
+Players wear uniforms on the ground.
+The captain leads the team well.
+Swimming is a very good exercise.
+We cycle in the park on Sundays.
+Sports teach us teamwork and discipline.
+The coach trains the young players.
+I watch cricket matches with my father.
+Winning feels good but playing matters more.
+The stadium was full of happy fans.
+Tennis players hit the ball over the net.
+Yoga keeps the body and mind calm.
+We should play outdoor games daily.
+The race begins at the starting line.
+Practice makes a player perfect.
+
+# technology-english.txt
+Computers help us learn new things.
+I use a laptop for my studies.
+The internet connects people around the world.
+Mobile phones are useful for talking.
+Robots can do hard and boring work.
+Science changes our life every year.
+I am learning how websites work.
+A website opens in a web browser.
+Videos help us understand lessons better.
+Technology makes work faster and easier.
+We should use technology with care.
+Online classes helped students during holidays.
+Games on computers are fun to play.
+New inventions surprise us every day.
+Electric cars run without petrol.
+The space rocket reached the moon.
+Scientists study stars with big telescopes.
+Smart watches tell time and count steps.
+Artificial intelligence is growing very fast.
+Learning technology opens many doors.
+
+# stories-english.txt
+Once there was a small boy in a village.
+The boy loved to hear stories at night.
+One day he found a magic lamp.
+The lamp made his wishes come true.
+He wished for books and good friends.
+A kind old man lived near the river.
+The old man helped everyone in the village.
+A little bird got lost in the forest.
+The bird finally found its way home.
+The clever fox tricked the crow once.
+The crow learned a lesson that day.
+A farmer worked hard in his field.
+His hard work gave a rich harvest.
+The honest woodcutter got a golden axe.
+Truth always wins in the end.
+The small ant saved the dove one day.
+Kindness is never wasted in life.
+The tortoise won the race slowly.
+Slow and steady work brings success.
+Every story teaches us something good.
+
+
+# animals-hindi.txt
+बिल्ली चटाई पर सो रही है।
+बिल्ली सुबह दूध पीती है।
+कुत्ता हर दिन बगीचे में दौड़ता है।
+कुत्ता वफ़ादार और दोस्त होता है।
+चिड़िया पेड़ पर गाती है।
+चिड़िया आसमान में ऊँचा उड़ती है।
+मछली साफ़ पानी में तैरती है।
+गाय खेत में हरी घास खाती है।
+घोड़ा मैदान में तेज़ दौड़ता है।
+हाथी सबसे बड़ा जानवर है।
+शेर को जंगल का राजा कहते हैं।
+बंदर पेड़ से पेड़ पर कूदता है।
+खरगोश बगीचे में गाजर खाता है।
+बत्तख छोटे तालाब में तैरती है।
+मुर्गी सुबह अंडे देती है।
+मेरी बिल्ली गेंद से खेलना पसंद करती है।
+छोटा पिल्ला हर जगह मेरे पीछे आता है।
+चिड़ियाँ बसंत में घोंसला बनाती हैं।
+बाघ घने जंगल में शिकार करता है।
+भालू ठंडी सर्दी में सोता है।
+
+# school-hindi.txt
+मैं सुबह स्कूल जाता हूँ।
+मेरा स्कूल मेरे घर के पास है।
+शिक्षक ब्लैकबोर्ड पर लिखते हैं।
+हम स्कूल में हिंदी और गणित सीखते हैं।
+मेरा दोस्त कक्षा में मेरे पास बैठता है।
+स्कूल की घंटी नौ बजे बजती है।
+हम दोपहर में फुटबॉल खेलते हैं।
+पुस्तकालय में कई अच्छी किताबें हैं।
+मैं हर हफ़्ते एक नई कहानी पढ़ता हूँ।
+हमारे शिक्षक हमें रोचक कहानियाँ सुनाते हैं।
+हम शाम को अपना होमवर्क करते हैं।
+कक्षा साफ़ और रोशन है।
+छात्र उत्तर देने के लिए हाथ उठाते हैं।
+मैं अपनी किताबें नीले बैग में ले जाता हूँ।
+हम साथ में सुबह की प्रार्थना गाते हैं।
+विज्ञान की कक्षा मेरी पसंदीदा कक्षा है।
+हम कला की कक्षा में चित्र बनाते हैं।
+परीक्षा अगले सोमवार से शुरू होगी।
+मेहनत से अच्छे अंक मिलते हैं।
+रोज़ पढ़ने से सीखना आसान हो जाता है।
+
+# nature-hindi.txt
+सूरज पूर्व में उगता है।
+सूरज पश्चिम में डूबता है।
+बारिश काले बादलों से गिरती है।
+बारिश से खेत फिर हरे हो जाते हैं।
+नदी समुद्र की ओर बहती है।
+पहाड़ ऊँचे और शांत हैं।
+सर्दी में पहाड़ों पर बर्फ़ पड़ती है।
+हवा ऊँचे पेड़ों को हिलाती है।
+बसंत में फूल खिलते हैं।
+बगीचा लाल गुलाबों से भरा है।
+मधुमक्खियाँ फूलों से शहद लेती हैं।
+चाँद रात में चमकता है।
+तारे साफ़ रात में टिमटिमाते हैं।
+समुद्र की लहरें रेत को छूती हैं।
+हरे पेड़ हमें साफ़ हवा देते हैं।
+हमें हर साल और पेड़ लगाने चाहिए।
+जंगल कई जानवरों का घर है।
+बारिश के बाद इंद्रधनुष दिखता है।
+सुबह की हवा ताज़ा और ठंडी होती है।
+प्रकृति हमें खाना पानी और आश्रय देती है।
+
+# family-hindi.txt
+मेरा परिवार एक छोटे घर में रहता है।
+मेरी माँ हमारे लिए स्वादिष्ट खाना बनाती हैं।
+मेरे पिता सुबह काम पर जाते हैं।
+मेरी बहन मेरे होमवर्क में मदद करती है।
+मेरा भाई अपने दोस्तों के साथ क्रिकेट खेलता है।
+हम हर रात साथ में खाना खाते हैं।
+मेरी दादी पुरानी कहानियाँ सुनाती हैं।
+मेरे दादा रोज़ अख़बार पढ़ते हैं।
+हम छुट्टियों में अपने गाँव जाते हैं।
+परिवार के सदस्य हमेशा एक दूसरे की मदद करते हैं।
+हम घर पर साथ में त्योहार मनाते हैं।
+मेरी माँ मुझे अच्छे संस्कार सिखाती हैं।
+मेरे पिता ने मुझे नई साइकिल दिलाई।
+हम रविवार को साथ में फिल्म देखते हैं।
+प्रेम और देखभाल परिवार को मज़बूत बनाते हैं।
+मेरा छोटा भाई चॉकलेट केक पसंद करता है।
+हम हर साल परिवार की तस्वीर लेते हैं।
+दादा दादी परिवार की जड़ होते हैं।
+हम घर पर बड़ों का सम्मान करते हैं।
+घर वही है जहाँ परिवार साथ रहता है।
+
+# stories-hindi.txt
+एक गाँव में एक छोटा लड़का रहता था।
+लड़के को रात में कहानियाँ सुनना पसंद था।
+एक दिन उसे एक जादुई चिराग़ मिला।
+चिराग़ से उसकी इच्छाएँ पूरी हो गईं।
+उसने किताबों और अच्छे दोस्तों की इच्छा की।
+नदी के पास एक दयालु बूढ़ा आदमी रहता था।
+बूढ़ा आदमी गाँव में सबकी मदद करता था।
+एक छोटी चिड़िया जंगल में खो गई।
+चिड़िया को आख़िर घर का रास्ता मिल गया।
+चालाक लोमड़ी ने कौवे को एक बार ठगा।
+कौवे को उस दिन एक सबक मिला।
+एक किसान अपने खेत में मेहनत करता था।
+उसकी मेहनत से अच्छी फ़सल हुई।
+ईमानदार लकड़हारे को सोने की कुल्हाड़ी मिली।
+अंत में सच हमेशा जीतता है।
+छोटी चींटी ने एक दिन कबूतर को बचाया।
+दया कभी बेकार नहीं जाती।
+कछुए ने धीरे धीरे दौड़ जीत ली।
+धीमा और लगातार काम सफलता देता है।
+हर कहानी हमें कुछ अच्छा सिखाती है।
+
+# daily-english.txt
+I wake up early in the morning.
+I brush my teeth and wash my face.
+I drink a glass of warm water.
+I get ready for school by eight.
+I say goodbye to my mother.
+The bus comes to our street daily.
+I reach home in the afternoon.
+I rest for a while after lunch.
+I finish my homework before playing.
+I go to bed at ten at night.
+Good habits keep us healthy and happy.
+I help my mother in the kitchen sometimes.
+We keep our house clean every day.
+I write my diary before sleeping.
+Sunday is a holiday for everyone.
+I plan my day in the morning.
+Time is precious and never returns.
+We should respect time in life.
+A daily routine brings discipline.
+Small good habits build a great life.
+
