@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LTMWA</title>
+<style>
+:root{
+  --bg:#111214;
+  --panel:#17181b;
+  --panel2:#1e1f23;
+  --line:#2a2b30;
+  --text:#f2f2f2;
+  --muted:#9b9da3;
+  --accent:#00d6d6;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:grid;grid-template-columns:260px 1fr}
+aside{background:var(--panel);border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:12px;overflow-y:auto}
+.logo{font-weight:800;font-size:22px}
+.logo span{color:var(--accent)}
+.small{color:var(--muted);font-size:13px;line-height:1.5}
+.btn{background:var(--accent);color:#000;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;text-align:center}
+input[type=range]{width:100%}
+main{display:flex;flex-direction:column;min-width:0}
+header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+#chat{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:18px}
+.msg{max-width:820px;width:100%;margin:0 auto;line-height:1.7}
+.msg .who{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:700;letter-spacing:.04em}
+.msg.user .bubble{background:var(--panel2);border:1px solid var(--line);padding:12px 16px;border-radius:14px}
+.bar{padding:16px 20px 20px}
+.bar-inner{max-width:820px;margin:0 auto;display:flex;gap:10px;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:8px}
+.bar textarea{flex:1;background:none;border:none;outline:none;color:var(--text);resize:none;font-family:inherit;font-size:15px;padding:10px;max-height:140px}
+.bar button{background:var(--accent);color:#000;border:none;border-radius:12px;padding:0 20px;font-weight:700;cursor:pointer}
+.bar button:disabled{opacity:.5;cursor:wait}
+.try{display:flex;gap:8px;flex-wrap:wrap;max-width:820px;margin:0 auto 10px}
+.try button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 12px;cursor:pointer}
+.try button:hover{color:var(--text);border-color:var(--accent)}
+.chip{font-size:12px;background:var(--panel2);border:1px solid var(--line);padding:4px 8px;border-radius:999px;color:var(--muted);display:inline-block;margin:2px}
+@media(max-width:760px){body{grid-template-columns:1fr}aside{display:none}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="logo">LTM<span>WA</span></div>
+  <p class="small">Large Text Model without API. A real neural model, trained from scratch, running 100% in your browser. No API, no server calls while chatting.</p>
+  <button class="btn" id="newChatBtn">new chat</button>
+  <p class="small" id="stats">loading the brain...</p>
+  <div>
+    <p class="small">creativity</p>
+    <input type="range" id="temp" min="4" max="12" value="8">
+    <p class="small">low is safer, high is more random</p>
+  </div>
+  <div>
+    <p class="small">languages</p>
+    <span class="chip">English</span>
+    <span class="chip">Hindi</span>
+  </div>
+  <p class="small">try: hi, who made you, write about a cat, tell me a story, hindi mein school par likho</p>
+</aside>
+<main>
+  <header>
+    <strong>LTMWA</strong>
+    <span class="small" id="status">loading brain...</span>
+  </header>
+  <div id="chat"></div>
+  <div class="bar">
+    <div class="try" id="tryRow">
+      <button data-q="hi">hi</button>
+      <button data-q="who made you">who made you</button>
+      <button data-q="write about a cat">write about a cat</button>
+      <button data-q="tell me a story">tell me a story</button>
+      <button data-q="write about school">write about school</button>
+      <button data-q="hindi mein school par likho">hindi mein school</button>
+    </div>
+    <div class="bar-inner">
+      <textarea id="input" rows="1" placeholder="message LTMWA..."></textarea>
+      <button id="sendBtn" disabled>send</button>
+    </div>
+  </div>
+</main>
+<script src="engine.js"></script>
+<script>
+var model = null;
+var ready = false;
+
+function S(id) { return document.getElementById(id); }
+
+function addMsg(who, text) {
+  var wrap = document.createElement("div");
+  wrap.className = "msg " + (who === "you" ? "user" : "ai");
+  var w = document.createElement("div");
+  w.className = "who";
+  w.textContent = who === "you" ? "YOU" : "LTMWA";
+  wrap.appendChild(w);
+  if (who === "you") {
+    var bub = document.createElement("div");
+    bub.className = "bubble";
+    bub.textContent = text;
+    wrap.appendChild(bub);
+  } else {
+    var p = document.createElement("div");
+    p.textContent = text;
+    wrap.appendChild(p);
+  }
+  S("chat").appendChild(wrap);
+  S("chat").scrollTop = S("chat").scrollHeight;
+  return wrap;
+}
+
+function cleanOut(text) {
+  var t = (text || "").trim();
+  t = t.split(/\buser\s*:/i)[0].split(/\bbot\s*:/i)[0].trim();
+  if (t) t = t.charAt(0).toUpperCase() + t.slice(1);
+  return t;
+}
+
+function fastPath(q) {
+  var lower = q.toLowerCase().trim();
+  if (/^(hi|hii+|hello|hey|namaste|नमस्ते)[!. ]*$/.test(lower)) return "Hi! I am LTMWA. Ask me to write about a cat, tell a story, or hindi mein kuch likho.";
+  if (/who made you|who created you|who built you|your maker|your creator/.test(lower)) return "I was made by MeowSamOPDZN Studio.";
+  if (/what is your name|your name|tumhara naam/.test(lower)) return "I am LTMWA, a Large Text Model without API.";
+  if (/what does ltmwa mean|what is ltmwa/.test(lower)) return "LTMWA means Large Text Model without API. I am a real neural model and I run fully in your browser.";
+  return null;
+}
+
+
+var markov = null;
+
+function buildMarkov(text) {
+  var en = [], hi = [];
+  text.split("\n").forEach(function (raw) {
+    var line = raw.trim();
+    if (!line || line.charAt(0) === "#") return;
+    line = line.replace(/^(Q:|A:|\u092a\u094d\u0930\u0936\u094d\u0928:|\u0909\u0924\u094d\u0924\u0930:|English:|Hindi:)\s*/, "").trim();
+    if (line.length < 4) return;
+    (/[\u0900-\u097F]/.test(line) ? hi : en).push(line);
+  });
+  function makeModel(sentences, hindi) {
+    var chain = {}, starts = [];
+    sentences.forEach(function (s) {
+      var words = s.replace(/[।.?!]+$/g, "").split(/\s+/).filter(Boolean);
+      if (words.length < 3) return;
+      starts.push([words[0], words[1]]);
+      var seq = words.concat(["<end>"]);
+      for (var i = 0; i + 2 < seq.length; i++) {
+        var key = (seq[i] + " " + seq[i + 1]).toLowerCase();
+        if (!chain[key]) chain[key] = [];
+        chain[key].push(seq[i + 2]);
+      }
+    });
+    return { chain: chain, starts: starts, sentences: sentences, hindi: hindi };
+  }
+  markov = { english: makeModel(en, false), hindi: makeModel(hi, true) };
+}
+
+function markovSentence(model, topics) {
+  var start = model.starts[Math.floor(Math.random() * model.starts.length)];
+  if (topics.length) {
+    var pool = model.starts.filter(function (st) {
+      return topics.some(function (tp) { return st.join(" ").toLowerCase().indexOf(tp) !== -1; });
+    });
+    if (pool.length) start = pool[Math.floor(Math.random() * pool.length)];
+  }
+  var words = [start[0], start[1]];
+  var seen = {};
+  for (var step = 0; step < 22; step++) {
+    var key = (words[words.length - 2] + " " + words[words.length - 1]).toLowerCase();
+    if (seen[key]) break;
+    seen[key] = true;
+    var list = model.chain[key];
+    if (!list || !list.length) break;
+    var nxt = list[Math.floor(Math.random() * list.length)];
+    if (nxt === "<end>") break;
+    words.push(nxt);
+  }
+  if (words.length < 4) return null;
+  var s = words.join(" ");
+  return s.charAt(0).toUpperCase() + s.slice(1) + (model.hindi ? "।" : ".");
+}
+
+var HINDI_MAP = { school: ["स्कूल", "शिक्षक", "कक्षा"], prakriti: ["पेड़", "फूल", "सूरज"], nature: ["पेड़", "फूल", "सूरज"], cat: ["बिल्ली"], dog: ["कुत्ता"], family: ["परिवार"], story: ["लड़का", "गाँव"], kahani: ["लड़का", "गाँव"] };
+
+function markovAnswer(q) {
+  if (!markov) return null;
+  var lower = q.toLowerCase();
+  var wantHindi = /hindi|hinglish/.test(lower) || /[\u0900-\u097F]/.test(q);
+  var model = wantHindi ? markov.hindi : markov.english;
+  var topics = lower.replace(/[^a-z0-9\u0900-\u097F\s]/g, " ").split(/\s+/).filter(function (w) { return w.length > 2; });
+  if (wantHindi) {
+    var mapped = [];
+    topics.forEach(function (tp) { if (HINDI_MAP[tp]) mapped = mapped.concat(HINDI_MAP[tp]); });
+    if (/[\u0900-\u097F]/.test(q)) mapped = mapped.concat(topics);
+    topics = mapped;
+  }
+  var out = [];
+  var tries = 0;
+  while (out.length < 4 && tries < 60) {
+    tries++;
+    var s = markovSentence(model, topics);
+    if (s && out.indexOf(s) === -1) {
+      if (!topics.length || topics.some(function (tp) { return s.toLowerCase().indexOf(tp) !== -1; }) || out.length >= 2) out.push(s);
+    }
+  }
+  return out.length ? out.join(" ") : null;
+}
+
+function neuralGood(text) {
+  if (!text) return false;
+  var words = text.split(/\s+/).filter(Boolean);
+  if (words.length < 6) return false;
+  var counts = {};
+  var letters = 0;
+  words.forEach(function (w) {
+    counts[w.toLowerCase()] = (counts[w.toLowerCase()] || 0) + 1;
+    if (/[a-z\u0900-\u097F]/i.test(w)) letters++;
+  });
+  if (letters / words.length < 0.6) return false;
+  for (var k in counts) if (counts[k] > 3) return false;
+  return true;
+}
+
+function ask(q) {
+  var fast = fastPath(q);
+  if (fast) return fast;
+  var temp = Number(S("temp").value) / 10;
+  var long = /story|kahani|paragraph|long/.test(q.toLowerCase());
+  var prompt = "user: " + q + "\nbot:";
+  var out = model.generate(prompt, long ? 95 : 60, temp, 40);
+  var cleaned = cleanOut(out);
+  if (!neuralGood(cleaned)) {
+    var retry = cleanOut(model.generate(prompt, 60, 0.7, 30));
+    if (neuralGood(retry)) cleaned = retry;
+    else {
+      var fb = markovAnswer(q);
+      if (fb) return fb;
+    }
+  }
+  return cleaned || "Hmm, my brain went blank on that one. Try a simple topic like cat, school, rain, or story.";
+}
+
+function send() {
+  if (!ready) return;
+  var input = S("input");
+  var q = input.value.trim();
+  if (!q) return;
+  addMsg("you", q);
+  input.value = "";
+  input.style.height = "auto";
+  var btn = S("sendBtn");
+  btn.disabled = true;
+  btn.textContent = "...";
+  setTimeout(function () {
+    try {
+      addMsg("ai", ask(q));
+    } catch (e) {
+      addMsg("ai", "Something glitched in my brain. Try again with a shorter message.");
+    }
+    btn.disabled = false;
+    btn.textContent = "send";
+  }, 30);
+}
+
+async function init() {
+  addMsg("ai", "Loading my brain... I am a real trained model, and I run right here in your browser.");
+  try {
+    var meta = await (await fetch("ltmwa.json")).json();
+    model = new WordTransformer(meta);
+    await model.loadWeights("ltmwa_weights.bin");
+    ready = true;
+    S("sendBtn").disabled = false;
+    var cfg = meta.config;
+    S("stats").textContent = "brain loaded: " + (cfg.n_params / 1000000).toFixed(1) + "M parameters, " + cfg.n_layer + " layers, vocab " + cfg.vocab_size + " words (english + hindi). trained from scratch, running on this page.";
+    S("status").textContent = "ready";
+    addMsg("ai", "Brain loaded. I can chat and create sentences in English and Hindi. Try: write about a cat.");
+    fetch("text-corpus.txt").then(function (r) { return r.text(); }).then(function (text) { buildMarkov(text); }).catch(function () {});
+  } catch (e) {
+    S("status").textContent = "brain failed to load";
+    addMsg("ai", "My brain files could not load. Check that ltmwa.json and ltmwa_weights.bin sit next to this page, then refresh.");
+  }
+  S("sendBtn").addEventListener("click", send);
+  S("input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
+  });
+  S("input").addEventListener("input", function () {
+    var el = S("input");
+    el.style.height = "auto";
+    el.style.height = Math.min(el.scrollHeight, 140) + "px";
+  });
+  S("newChatBtn").addEventListener("click", function () { S("chat").innerHTML = ""; addMsg("ai", "New chat. Ask me anything, or ask me to write about a topic."); });
+  S("tryRow").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () { S("input").value = b.getAttribute("data-q"); send(); });
+  });
+}
+
+init();
+</script>
+</body>
+</html>
