@@ -117,6 +117,21 @@ function cleanOut(text) {
 }
 
 function fastPath(q) {
+  var raw = q.toLowerCase().trim();
+  if (/how are you|how are u|how r you|how is it going|how do you feel|how are things/.test(raw)) return "I am fine, thank you! I am a small browser AI, so I am always ready to chat and write sentences. How are you?";
+  if (/kaise ho|kya haal|कैसे हो|क्या हाल/.test(raw)) return "मैं ठीक हूँ, धन्यवाद! मैं एक छोटा ब्राउज़र AI हूँ। आप कैसे हैं?";
+  if (/thank you|thanks|dhanyavaad|धन्यवाद|शुक्रिया/.test(raw)) return "You are welcome! Happy to help.";
+  if (/^(bye|goodbye|see you|alvida)/.test(raw)) return "Bye! See you soon. Come back any time.";
+  if (/what are you doing|what r u doing/.test(raw)) return "I am chatting with you and creating sentences. What shall we write about?";
+  if (/good morning/.test(raw)) return "Good morning! Hope your day goes great. What shall we write today?";
+  if (/good night/.test(raw)) return "Good night! Sweet dreams.";
+  if (/good evening/.test(raw)) return "Good evening! How was your day?";
+  if (/good afternoon/.test(raw)) return "Good afternoon! How is your day going?";
+  if (/are you (ok|okay|fine)/.test(raw)) return "Yes, I am okay, thank you for asking!";
+  if (/i am fine|i am good|i am ok/.test(raw)) return "That is great to hear! What shall we do now, chat or write a story?";
+  if (/tell me a joke|make me laugh/.test(raw)) return "Why did the computer go to the doctor? Because it had a virus!";
+  if (/^namaste|नमस्ते/.test(raw)) return "नमस्ते! मैं ठीक हूँ। आप कैसे हैं? मुझसे कहिए, मैं अंग्रेज़ी और हिंदी में वाक्य बना सकता हूँ।";
+
   var lower = q.toLowerCase().trim();
   if (/^(hi|hii+|hello|hey|namaste|नमस्ते)[!. ]*$/.test(lower)) return "Hi! I am LTMWA. Ask me to write about a cat, tell a story, or hindi mein kuch likho.";
   if (/who made you|who created you|who built you|your maker|your creator/.test(lower)) return "I was made by MeowSamOPDZN Studio.";
@@ -209,7 +224,7 @@ function markovAnswer(q) {
 function neuralGood(text) {
   if (!text) return false;
   var words = text.split(/\s+/).filter(Boolean);
-  if (words.length < 6) return false;
+  if (words.length < 3) return false;
   var counts = {};
   var letters = 0;
   words.forEach(function (w) {
@@ -232,9 +247,13 @@ function ask(q) {
   if (!neuralGood(cleaned)) {
     var retry = cleanOut(model.generate(prompt, 60, 0.7, 30));
     if (neuralGood(retry)) cleaned = retry;
-    else {
+    else if (/write|tell|story|sentences|about|likho|batao|kahani/.test(q.toLowerCase())) {
       var fb = markovAnswer(q);
       if (fb) return fb;
+    } else if (cleaned && cleaned.split(/\s+/).filter(Boolean).length >= 4) {
+      return cleaned;
+    } else {
+      return "I am still learning to answer that one. I am best at writing sentences, try: write about a cat, or tell me a story.";
     }
   }
   return cleaned || "Hmm, my brain went blank on that one. Try a simple topic like cat, school, rain, or story.";
